@@ -47,11 +47,11 @@ Start the agent and ask about weather in any city:
 
 ```
 Copilot Weather Agent (Type 'exit' to quit)
-> What is the the current temperature in Anchorage?
+> How cold is it in Anchorage right now?
 
 The current temperature in Anchorage is 12.8°F.
 
-> What is the the current temperature in Miami?
+> What's the weather like in Miami?
 
 The current temperature in Miami is 75.2°F.
 ```
