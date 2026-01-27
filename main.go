@@ -90,7 +90,7 @@ func createWeatherTool() copilot.Tool {
 }
 
 func main() {
-	// ------------------ Initialize the Copilot Client ------------------
+	// Initialize the Copilot Client
 	getWeather := createWeatherTool()
 	client := copilot.NewClient(nil)
 	if err := client.Start(); err != nil {
@@ -98,7 +98,7 @@ func main() {
 	}
 	defer client.Stop()
 
-	// ------------------ Create a session ------------------
+	// Create a session
 
 	session, err := client.CreateSession(&copilot.SessionConfig{
 		Model:     "gpt-4.1",
@@ -109,7 +109,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// ------------------ Handle streaming events ------------------
+	// Handle streaming events
 
 	session.On(func(event copilot.SessionEvent) {
 		if event.Type == "assistant.message_delta" {
@@ -122,21 +122,21 @@ func main() {
 
 	// ------------------ The REPL Loop ------------------
 
-	// 1. Create a scanner to read from your terminal
+	// Create a scanner to read user input from the command line
 	scanner := bufio.NewScanner(os.Stdin)
 
 	fmt.Println("Copilot Weather Agent (Type 'exit' to quit)")
 	fmt.Print("> ")
 
-	// 2. The Loop: It keeps running until you stop the program
+	// Read user input in a loop
 	for scanner.Scan() {
 		userInput := scanner.Text()
 
-		// 3. Check if you want to quit
 		if userInput == "exit" || userInput == "quit" {
 			break
 		}
 
+		// Send the user input to the Copilot session
 		_, err = session.SendAndWait(copilot.MessageOptions{
 			Prompt: userInput, // What is the the current temperature in Anchorage?
 		}, 0)
