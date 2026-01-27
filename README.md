@@ -28,7 +28,7 @@ Example:
 ```bash
 git clone <your-repo-url>
 cd go-copilot-sdk-weather-agent
-go mod download
+go mod tidy
 ```
 
 2. Create a `.env` file in the project root:
@@ -46,14 +46,17 @@ go run main.go
 Start the agent and ask about weather in any city:
 
 ```
+└─$ go run main.go
 Copilot Weather Agent (Type 'exit' to quit)
 > How cold is it in Anchorage right now?
 
-The current temperature in Anchorage is 12.8°F.
+It is currently 14.1°F in Anchorage.
 
 > What's the weather like in Miami?
 
-The current temperature in Miami is 75.2°F.
+It is currently 61.9°F in Miami with 61% humidity.
+
+> 
 ```
 
 Type `exit` or `quit` to stop the program.

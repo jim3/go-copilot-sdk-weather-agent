@@ -67,7 +67,6 @@ func createWeatherTool() copilot.Tool {
 				fmt.Printf("client response failed: %s\n", err)
 				os.Exit(1)
 			}
-			fmt.Printf("STATUS CODE:%d\n\n", res.StatusCode)
 
 			resBody, err := io.ReadAll(res.Body)
 			if err != nil {
@@ -99,7 +98,6 @@ func main() {
 	defer client.Stop()
 
 	// Create a session
-
 	session, err := client.CreateSession(&copilot.SessionConfig{
 		Model:     "gpt-4.1",
 		Streaming: true,
@@ -110,7 +108,6 @@ func main() {
 	}
 
 	// Handle streaming events
-
 	session.On(func(event copilot.SessionEvent) {
 		if event.Type == "assistant.message_delta" {
 			fmt.Print(*event.Data.DeltaContent)
@@ -119,8 +116,6 @@ func main() {
 			fmt.Println()
 		}
 	})
-
-	// ------------------ The REPL Loop ------------------
 
 	// Create a scanner to read user input from the command line
 	scanner := bufio.NewScanner(os.Stdin)
