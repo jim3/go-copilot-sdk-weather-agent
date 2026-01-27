@@ -42,21 +42,17 @@ go run main.go
 ```
 
 ## Usage Examples
-
 Start the agent and ask about weather in any city:
 
 ```
-└─$ go run main.go
 Copilot Weather Agent (Type 'exit' to quit)
 > How cold is it in Anchorage right now?
+It is currently 14.2°F in Anchorage.
 
-It is currently 14.1°F in Anchorage.
+> What's it like in Miami?
+It is currently 61.4°F in Miami with 62% humidity.
 
-> What's the weather like in Miami?
-
-It is currently 61.9°F in Miami with 61% humidity.
-
-> 
+>
 ```
 
 Type `exit` or `quit` to stop the program.
@@ -68,7 +64,7 @@ The project uses:
 - **OpenWeatherMap API** for actual weather data
 - A simple tool definition that the SDK can call when it needs weather info
 
-The SDK figures out when to invoke the weather tool based on the conversation context, handles the API call, and formats the response naturally.
+The SDK figures out when to invoke the weather tool based on the conversation context, handles the API call, and formats the response naturally. 😎
 
 ## Notes
 
