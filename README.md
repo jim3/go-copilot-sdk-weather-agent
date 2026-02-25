@@ -68,6 +68,6 @@ The SDK figures out when to invoke the weather tool based on the conversation co
 
 ## Notes
 
-This is a learning project to explore the Copilot SDK. Planning to build something more substantial next (Fail2Ban monitoring tool), but this was a good way to understand the basics of tool integration and streaming responses.
+This is a learning project to explore the Copilot SDK. This was a good way to understand the basics of tool integration and streaming responses.
 
 Feel free to use as a starting point for your own Copilot SDK experiments.
